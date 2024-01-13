@@ -74,5 +74,10 @@
           <i class="ni ni-chart-bar-32 text-warning"></i> Administradores
         </a>
       </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{{ url('/plantillas') }}">
+          <i class="ni ni-chart-bar-32 text-warning"></i> Plantillas
+        </a>
+      </li>
     </ul>
   @endif

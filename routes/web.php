@@ -21,8 +21,20 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-//Rutas Usuarios
-Route::resource('usuarios', 'App\Http\Controllers\UsersController');
+Route::middleware(['auth', 'admin'])->group(function () {
+    //Rutas Usuarios
+    Route::resource('usuarios', 'App\Http\Controllers\admin\UsersController');
 
-//Rutas Admins
-Route::resource('admins', 'App\Http\Controllers\AdminController');
+    //Rutas Admins
+    Route::resource('admins', 'App\Http\Controllers\admin\AdminController');
+
+    //Rutas Plantillas Admin
+    Route::get('/plantillas', [App\Http\Controllers\admin\TemplateController::class, 'index']);
+    Route::get('/plantillas/create', [App\Http\Controllers\admin\TemplateController::class, 'create']);
+    Route::get('/plantillas/{template}/edit', [App\Http\Controllers\admin\TemplateController::class, 'edit']);
+    Route::post('/plantillas', [App\Http\Controllers\admin\TemplateController::class, 'sendData']);
+    Route::put('/plantillas/{template}', [App\Http\Controllers\admin\TemplateController::class, 'update']);
+    Route::delete('/plantillas/{template}', [App\Http\Controllers\admin\TemplateController::class, 'destroy']);
+
+});
+
