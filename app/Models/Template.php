@@ -8,4 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class Template extends Model
 {
     use HasFactory;
+
+    public function scopeTemplate($query){
+        return $query->where('id', '1');
+    }
 }

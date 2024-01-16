@@ -16,7 +16,7 @@
       </a>
     </li>
     <li class="nav-item">
-      <a class="nav-link " href="./examples/icons.html">
+      <a class="nav-link " href="/plantillasInfo">
         <i class="ni ni-briefcase-24 text-blue"></i> Plantillas Informativos
       </a>
     </li>
@@ -32,7 +32,7 @@
     </li>
     @elseif(auth()->user()->role == 'usuario')
     <li class="nav-item">
-      <a class="nav-link " href="./examples/icons.html">
+      <a class="nav-link " href="/plantillainfo/create">
         <i class="ni ni-briefcase-24 text-blue"></i> Plantillas Informativos
       </a>
     </li>

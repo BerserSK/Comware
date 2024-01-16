@@ -38,3 +38,5 @@ Route::middleware(['auth', 'admin'])->group(function () {
 
 });
 
+Route::get('/plantillasInfo', [App\Http\Controllers\InformativeController::class, 'index']);
+

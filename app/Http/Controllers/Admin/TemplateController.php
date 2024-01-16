@@ -20,12 +20,12 @@ class TemplateController extends Controller
 
     public function sendData(Request $request){
         $rules = [
-            'name' => 'required|min:3'
+            'name' => 'required|min:2'
         ];
 
         $message = [
             'name.required' => 'El nombre de la plantilla es obligatorio',
-            'name.min' => 'El nombre de la plantilla debe tener mas de 3 caracteres'
+            'name.min' => 'El nombre de la plantilla debe tener mas de 2 caracteres'
         ];
 
         $this->validate($request, $rules, $message);
