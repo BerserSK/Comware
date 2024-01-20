@@ -10,7 +10,7 @@ use App\Http\Controllers\Controller;
 class TemplateController extends Controller
 {
     public function index(){
-        $templates = Template::all();
+        $templates = Template::Template()->paginate(5);
         return view('templates.index', compact('templates'));
     }
 

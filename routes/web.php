@@ -39,4 +39,6 @@ Route::middleware(['auth', 'admin'])->group(function () {
 });
 
 Route::get('/plantillasInfo', [App\Http\Controllers\InformativeController::class, 'index']);
+Route::get('/plantillasInfo/{id}', [App\Http\Controllers\InformativeController::class, 'show'])->name('templates.show');
+//Route::post('/plantillasInfo/all', [App\Http\Controllers\InformativeController::class, 'all']);
 

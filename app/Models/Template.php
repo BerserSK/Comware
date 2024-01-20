@@ -10,6 +10,6 @@ class Template extends Model
     use HasFactory;
 
     public function scopeTemplate($query){
-        return $query->where('id', '1');
+        //return $query->where('id', '8');
     }
 }

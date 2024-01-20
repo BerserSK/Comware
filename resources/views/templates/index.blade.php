@@ -31,6 +31,8 @@
                 <th scope="col">opciones</th>
               </tr>
             </thead>
+
+            
             <tbody>
                 @foreach ($templates as $plantilla)
                     <tr>
@@ -40,9 +42,10 @@
                         <td>
                             {{ $plantilla->description }}
                         </td>
-                        <td>
-                            {{ $plantilla->plantilla }}
-                        </td>
+                          <td>
+                              {{ $plantilla->plantilla }}
+                          </td>
+
                         <td>
                             <form action="{{ url('/plantillas/'.$plantilla->id)}}" method="POST">
                                 @csrf
@@ -56,6 +59,9 @@
             </tbody>
           </table>
         </div>
+      </div>
+      <div class="card-body">
+        {{ $templates->links() }}
       </div>
     </div>
 
